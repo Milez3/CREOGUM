@@ -1,7 +1,6 @@
 /**
- * CREOGUM landing copy — aligned to the April 2026 Developer Brief (PDF).
- * When the single-file prototype HTML is available, paste it into /reference/prototype.html
- * and reconcile any deltas here (this file stays the app source of truth).
+ * CREOGUM landing copy — trimmed for the "viral motion" pass.
+ * Punch > paragraphs. Each block is a fragment, not an essay.
  */
 
 export const brand = {
@@ -9,44 +8,37 @@ export const brand = {
   tagline: "Consistency is the dose.",
   email: "Hello@creogum.com",
   location: "Toronto, ON",
-  /** Do not show shipping ($4.99) on the landing page — brief Section 06 / content notes */
   shipBatchCopy: "Mid-July 2026",
 } as const;
 
 export const nav = {
-  reserveCta: "Reserve Now",
+  reserveCta: "Reserve",
 } as const;
 
 export const hero = {
-  eyebrow: "— Section 02 — Hero",
-  /** Brief: italic on "actually" */
+  eyebrow: "— 02 / Hero",
   headlineBefore: "The habit that ",
   headlineEm: "actually",
   headlineAfter: " sticks.",
   mantra: "— Consistency is the dose.",
-  /** Brief Section 01 positioning + product */
-  subhead:
-    "Premium functional gum delivering 175mg of creatine per piece. The product removes all friction from daily creatine use — no scoops, no shakes, no new routine.",
+  /** Fragment chips — rendered as individual pills, not a paragraph */
+  subheadChips: ["175mg creatine", "per piece", "no scoop", "no shaker"] as const,
   primaryCta: "Reserve Now",
-  secondaryCta: "See the comparison",
-  /** Brief Section 06 — key price facts (render with amber on founding price only) */
-  priceFoundingLabel: "Founding Member",
+  secondaryCta: "Compare",
+  priceFoundingLabel: "Founding",
   priceFounding: "$16.99",
-  priceFoundingNote: "locked forever, pre-sale only, closes when Batch 001 ships",
-  priceTrialLabel: "The Trial",
+  priceFoundingNote: "locked forever",
+  priceTrialLabel: "Trial",
   priceTrial: "$18.99",
-  priceTrialNote: "one-time, no commitment",
+  priceTrialNote: "one-time",
   stats: [
-    { label: "Dose", value: "175mg / piece" },
-    { label: "Daily ritual", value: "4 pieces = 700mg" },
-    { label: "Batch 001", value: "7,000 units" },
+    { label: "Dose", value: "175", suffix: "mg" },
+    { label: "Daily", value: "4", suffix: "pieces" },
+    { label: "Batch 001", value: "7000", suffix: "units" },
   ],
-  statFootnote:
-    "700mg daily from four pieces exceeds the 2026 Health Canada recommendation for creatine context cited in our brief.",
 } as const;
 
 export const ticker = {
-  /** Brief: scrolling brand phrases — duplicate in UI for seamless loop */
   phrases: [
     "No scoops",
     "No shakes",
@@ -59,151 +51,135 @@ export const ticker = {
 } as const;
 
 export const competitor = {
-  eyebrow: "— Section 04 — The real competitor is forgetting",
+  eyebrow: "— 04 / Competitor",
   title: "The real competitor is forgetting.",
-  intro:
-    "Powders, gummies, and pills all work on paper. CREOGUM competes with the routine breaking down — not with a molecule.",
   cards: [
-    {
-      title: "Powders",
-      body: "Scoops, shakers, timing, taste — friction that stacks every day.",
-    },
-    {
-      title: "Gummies",
-      body: "Treat-first formats that read as candy before they read as ritual.",
-    },
-    {
-      title: "Pills",
-      body: "Another bottle to remember. Easy to skip when life gets loud.",
-    },
+    { title: "Powders", body: "Scoops. Shakers. Timing." },
+    { title: "Gummies", body: "Reads as candy first." },
+    { title: "Pills", body: "Another bottle to skip." },
   ],
 } as const;
 
 export const survey = {
-  eyebrow: "— Section 05 — Survey validation",
-  /** Brief: 75.2% cite "forget / no routine" as #1 barrier */
+  eyebrow: "— 05 / Survey",
   counterEnd: 75.2,
-  counterLabel:
-    "Respondents cite “forget / no routine” as the #1 barrier to consistency — CREOGUM exists to remove that friction.",
+  counterLabel: "#1 reason people quit: forgetting.",
   bars: [
     { label: "Forget / no routine", widthPct: 75.2 },
-    { label: "Taste / texture fatigue", widthPct: 48 },
+    { label: "Taste fatigue", widthPct: 48 },
     { label: "Portability", widthPct: 36 },
-    { label: "Timing around training", widthPct: 29 },
+    { label: "Timing", widthPct: 29 },
     { label: "Stomach feel", widthPct: 21 },
-    { label: "Price per serving", widthPct: 18 },
+    { label: "Price", widthPct: 18 },
   ],
 } as const;
 
 export const manifesto = {
-  eyebrow: "— Section 06 — Manifesto",
+  eyebrow: "— 06 / Manifesto",
   title: "Compliance, not chemistry.",
   points: [
     "The best protocol is the one you repeat.",
-    "Habit beats heroics — small doses, daily.",
-    "Meet people where they already pause.",
-    "Premium means predictable, not performative.",
+    "Habit beats heroics.",
+    "Meet people where they pause.",
+    "Premium means predictable.",
   ],
 } as const;
 
 export const ritual = {
-  eyebrow: "— Section 07 — Daily ritual",
+  eyebrow: "— 07 / Ritual",
   title: "Four chews. One habit.",
   mantra: "— Consistency is the dose.",
   steps: [
-    { title: "Morning stack", description: "Anchor the day before the noise starts." },
-    { title: "Pre-work focus", description: "A chew on the way in — no shaker required." },
-    { title: "Afternoon reset", description: "Replace the slump with a repeat cue." },
-    { title: "Evening wind-down", description: "Close the loop on four pieces total." },
+    { title: "Morning.", description: "Anchor the day." },
+    { title: "Focus.", description: "On the way in." },
+    { title: "Reset.", description: "Beat the slump." },
+    { title: "Wind down.", description: "Close the loop." },
   ],
 } as const;
 
 export const comparison = {
-  eyebrow: "— Section 08 — Comparison table",
+  eyebrow: "— 08 / Comparison",
   title: "CREOGUM vs. the usual suspects",
   columns: ["", "CREOGUM", "Powders", "Gummies", "Pills"] as const,
   rows: [
-    ["Friction to use", "Very low", "High", "Low", "Low"],
+    ["Friction", "Very low", "High", "Low", "Low"],
     ["Portable", "Excellent", "Poor", "Good", "Good"],
-    ["Feels like a daily ritual", "Yes", "Sometimes", "Rarely", "Rarely"],
-    ["Creatine dose clarity", "Label-clear", "Varies", "Varies", "Varies"],
+    ["Feels like ritual", "Yes", "Sometimes", "Rarely", "Rarely"],
+    ["Dose clarity", "Label-clear", "Varies", "Varies", "Varies"],
   ],
 } as const;
 
 export const spots = {
-  eyebrow: "— Section 09 — Spot counter",
-  title: "Batch 001 spots",
-  /** Brief: update manually as reservations come in */
+  eyebrow: "— 09 / Spots",
+  title: "Batch 001",
   claimed: 143,
   total: 7000,
-  helper: "Update this figure manually as reservations come in.",
+  helper: "",
 } as const;
 
 /** Progress bar fill — must match claimed/total */
 export const spotsFillWidthPct = (spots.claimed / spots.total) * 100;
 
 export const pricing = {
-  eyebrow: "— Section 10 — Pricing cards",
-  title: "Choose your entry",
+  eyebrow: "— 10 / Pricing",
+  title: "Pick your entry",
   founding: {
-    badge: "Founding Member",
-    sub: "Pre-sale only · locked forever · closes when Batch 001 ships",
+    badge: "Founding",
+    sub: "Pre-sale · locked forever",
     price: "$16.99",
-    perks: ["Locked price until Batch 001 ships", "Priority allocation in Batch 001"],
+    perks: ["Locked until Batch 001 ships", "Priority allocation"],
   },
   trial: {
-    badge: "The Trial",
+    badge: "Trial",
     sub: "One-time · no commitment",
     price: "$18.99",
-    perks: ["Try the format without a subscription", "Single purchase"],
+    perks: ["Single purchase", "No subscription"],
   },
 } as const;
 
 export const faq = {
-  eyebrow: "— Section 11 — FAQ accordion",
+  eyebrow: "— 11 / FAQ",
   title: "FAQ",
-  /** Seven questions — brief requirement; answers grounded in brief facts */
   items: [
     {
-      q: "How much creatine is in each piece?",
-      a: "175mg per piece. Four pieces daily totals 700mg — exceeding the 2026 Health Canada recommendation context noted in our product brief.",
+      q: "How much creatine per piece?",
+      a: "175mg. Four pieces = 700mg daily — above the 2026 Health Canada recommendation context cited in our brief.",
     },
     {
       q: "When does Batch 001 ship?",
-      a: `We are targeting ${brand.shipBatchCopy}. Founding Member pricing stays locked until Batch 001 ships.`,
+      a: `${brand.shipBatchCopy}. Founding Member pricing stays locked until it ships.`,
     },
     {
-      q: "What do Founding Member and The Trial cost?",
-      a: "Founding Member is $16.99 (locked forever, pre-sale only, closes when Batch 001 ships). The Trial is $18.99 one-time with no commitment.",
+      q: "What does it cost?",
+      a: "$16.99 Founding (pre-sale, locked forever). $18.99 Trial (one-time, no commitment).",
     },
     {
-      q: "Why gum instead of powder or pills?",
-      a: "No scoops, no shakes, no new routine — gum removes the friction that makes people forget.",
+      q: "Why gum?",
+      a: "No scoops, no shakes, no new routine — the friction that makes people forget is gone.",
     },
     {
-      q: "Will shipping show on this page?",
-      a: "No. Shipping is not displayed on the landing page; it is handled at checkout only.",
+      q: "Shipping?",
+      a: "Handled at checkout. Not shown on this page.",
     },
     {
-      q: "Where is CREOGUM based?",
+      q: "Where are you based?",
       a: `${brand.location} · ${brand.email}`,
     },
     {
-      q: "How many units are in Batch 001?",
-      a: "7,000 units. Spot reservations update the counter on this page as they come in.",
+      q: "How many units in Batch 001?",
+      a: "7,000. The counter on this page updates as reservations come in.",
     },
   ],
 } as const;
 
 export const reserve = {
-  eyebrow: "— Section 12 — Reserve form",
+  eyebrow: "— 12 / Reserve",
   title: "Claim your spot.",
-  intro:
-    "No payment on this page — this is a reservation / waitlist for Batch 001. We will follow up by email.",
+  intro: "No payment. Reservation only. We'll email you.",
   perks: [
-    "Founding Member price locked until Batch 001 ships",
+    "Founding price locked until ship",
     "Early access to future drops",
-    "Direct line to the founders in Toronto",
+    "Direct line to Toronto",
   ],
   successTitle: "You are in.",
   successBody: "Watch your inbox for Batch 001 updates.",
@@ -215,8 +191,8 @@ export const reserve = {
     referral: "How did you hear about us?",
   },
   sku: {
-    founding: "Founding Member — $16.99 (locked pre-sale)",
-    trial: "The Trial — $18.99 one-time",
+    founding: "Founding — $16.99",
+    trial: "Trial — $18.99",
   },
   submit: "Reserve my spot",
 } as const;
