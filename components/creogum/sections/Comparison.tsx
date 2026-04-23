@@ -68,10 +68,10 @@ export function Comparison() {
                             hoveredCol !== null && hoveredCol !== cellIndex && cellIndex !== 0
                               ? "saturate(0.35) opacity(0.55)"
                               : "saturate(1) opacity(1)",
-                          background:
+                          backgroundColor:
                             cellIndex === CREOGUM_COL
                               ? "rgba(192,221,151,0.14)"
-                              : "transparent",
+                              : "rgba(192,221,151,0)",
                         }}
                         transition={{ duration: 0.25 }}
                         style={{

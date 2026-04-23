@@ -79,7 +79,8 @@ export function Pricing() {
 function RollingPrice({ price }: { price: string }) {
   const chars = price.split("");
   return (
-    <span style={{ fontVariantNumeric: "tabular-nums", display: "inline-flex" }}>
+    <span aria-label={price} style={{ fontVariantNumeric: "tabular-nums", display: "inline-flex" }}>
+      <span aria-hidden style={{ display: "inline-flex" }}>
       {chars.map((c, i) => {
         if (/\d/.test(c)) {
           return (
@@ -108,6 +109,7 @@ function RollingPrice({ price }: { price: string }) {
           </m.span>
         );
       })}
+      </span>
     </span>
   );
 }

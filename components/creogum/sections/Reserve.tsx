@@ -56,7 +56,7 @@ export function Reserve() {
                       <m.div
                         className="cg-perk-icon"
                         aria-hidden
-                        whileHover={{ background: "rgba(192,221,151,0.32)", scale: 1.08 }}
+                        whileHover={{ backgroundColor: "rgba(192,221,151,0.32)", scale: 1.08 }}
                       />
                       <span>{line}</span>
                     </m.div>

@@ -22,7 +22,7 @@ export function SlotCounter({ end, decimals = 0, suffix, duration = 1600, classN
   const raw = useMotionValue(0);
   const smooth = useSpring(raw, { stiffness: 60, damping: 18, mass: 1 });
   const display = useTransform(smooth, (v) => v.toFixed(decimals));
-  const [text, setText] = useState("0".padEnd(decimals + (decimals ? 2 : 1), "0"));
+  const [text, setText] = useState((0).toFixed(decimals));
 
   useMotionValueEvent(display, "change", (v) => setText(v));
 
@@ -93,16 +93,21 @@ export function SlotCounterDigits({ end, duration = 1700, suffix, className }: D
     return () => cancelAnimationFrame(raf);
   }, [visible, duration, progress, reduce]);
 
+  const ariaLabel = `${target.toLocaleString()}${suffix ?? ""}`;
+
   return (
     <span
       ref={ref}
       className={className}
+      aria-label={ariaLabel}
       style={{ display: "inline-flex", alignItems: "baseline", fontVariantNumeric: "tabular-nums" }}
     >
-      {digits.map((d, i) => (
-        <DigitSlot key={`${i}-${digits.length}`} target={d} progress={progress} offset={i / (digits.length * 1.4)} />
-      ))}
-      {suffix ? <span style={{ marginLeft: "0.15em" }}>{suffix}</span> : null}
+      <span aria-hidden style={{ display: "inline-flex", alignItems: "baseline" }}>
+        {digits.map((d, i) => (
+          <DigitSlot key={`${i}-${digits.length}`} target={d} progress={progress} offset={i / (digits.length * 1.4)} />
+        ))}
+        {suffix ? <span style={{ marginLeft: "0.15em" }}>{suffix}</span> : null}
+      </span>
     </span>
   );
 }
