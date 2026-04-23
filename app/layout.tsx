@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { brand, hero } from "@/content/site";
+import { brand } from "@/content/site";
 import { DM_Mono, Figtree, Playfair_Display } from "next/font/google";
 
 import "./globals.css";
@@ -28,7 +28,8 @@ const dmMono = DM_Mono({
 
 export const metadata: Metadata = {
   title: `${brand.name} — ${brand.tagline}`,
-  description: hero.subhead,
+  description:
+    "Premium functional gum delivering 175mg of creatine per piece. No scoops. No shakes. No new routine.",
 };
 
 export default function RootLayout({
