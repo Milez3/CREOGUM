@@ -7,13 +7,13 @@ export default function RitualDial({ auto = true }: { auto?: boolean }) {
   const [active, setActive] = useState(0);
   useEffect(() => {
     if (!auto) return;
-    const id = setInterval(() => setActive((a) => (a + 1) % 4), 2200);
+    const id = setInterval(() => setActive((a) => (a + 1) % 3), 2200);
     return () => clearInterval(id);
   }, [auto]);
 
   const R = 210;
   const cx = 260, cy = 260;
-  const progressPct = (active + 1) / 4;
+  const progressPct = (active + 1) / 3;
   const circ = 2 * Math.PI * R;
 
   return (
@@ -21,13 +21,13 @@ export default function RitualDial({ auto = true }: { auto?: boolean }) {
       <div className="ritual-inner">
         <div className="ritual-head reveal">
           <h2>
-            Four pieces.
+            Three pieces.
             <br />
-            <em>Four moments.</em>
+            <em>Three moments.</em>
           </h2>
           <div className="kicker">
-            A rhythm, not a regimen. Your day already has the anchors — we just
-            gave them a dose.
+            Morning, midday, evening — your day already has these anchors. We
+            just gave each one a dose.
           </div>
         </div>
 
