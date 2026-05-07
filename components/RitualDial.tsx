@@ -7,13 +7,13 @@ export default function RitualDial({ auto = true }: { auto?: boolean }) {
   const [active, setActive] = useState(0);
   useEffect(() => {
     if (!auto) return;
-    const id = setInterval(() => setActive((a) => (a + 1) % 4), 2200);
+    const id = setInterval(() => setActive((a) => (a + 1) % DOSES.length), 2200);
     return () => clearInterval(id);
   }, [auto]);
 
   const R = 210;
   const cx = 260, cy = 260;
-  const progressPct = (active + 1) / 4;
+  const progressPct = (active + 1) / DOSES.length;
   const circ = 2 * Math.PI * R;
 
   return (
@@ -21,13 +21,13 @@ export default function RitualDial({ auto = true }: { auto?: boolean }) {
       <div className="ritual-inner">
         <div className="ritual-head reveal">
           <h2>
-            Four pieces.
+            Three pieces.
             <br />
-            <em>Four moments.</em>
+            <em>Three moments.</em>
           </h2>
           <div className="kicker">
-            A rhythm, not a regimen. Your day already has the anchors — we just
-            gave them a dose.
+            A rhythm, not a regimen. Built for everyday consistency — not
+            &ldquo;workout days&rdquo; only.
           </div>
         </div>
 
@@ -38,11 +38,11 @@ export default function RitualDial({ auto = true }: { auto?: boolean }) {
               {Array.from({ length: 48 }).map((_, i) => {
                 const a = (i / 48) * Math.PI * 2;
                 const r1 = R - 4;
-                const r2 = R + (i % 4 === 0 ? 12 : 6);
+                const r2 = R + (i % 3 === 0 ? 12 : 6);
                 return (
                   <line
                     key={i}
-                    className={`dial-tick${i % 12 === 0 ? ' hi' : ''}`}
+                    className={`dial-tick${i % 16 === 0 ? ' hi' : ''}`}
                     x1={cx + Math.cos(a) * r1}
                     y1={cy + Math.sin(a) * r1}
                     x2={cx + Math.cos(a) * r2}

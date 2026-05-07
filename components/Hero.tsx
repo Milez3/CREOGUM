@@ -78,31 +78,19 @@ export default function Hero() {
               175<em>mg</em>
             </div>
           </div>
-          <div>
-            <div className="meta-label">Daily Dose</div>
-            <div className="meta-value">
-              4 <em>pieces</em>
-            </div>
-          </div>
         </div>
 
         <div className="hero-pouch fu fu-4">
           <div className="orbit">
             <div className="gum-piece p1">175</div>
             <div className="gum-piece p2">MG</div>
-            <div className="gum-piece p3">×4</div>
-            <div className="gum-piece p4">700</div>
+            <div className="gum-piece p3">CRE</div>
+            <div className="gum-piece p4">GUM</div>
           </div>
           <Pouch />
         </div>
 
         <div className="hero-right fu fu-5">
-          <div>
-            <div className="meta-label">Batch Size</div>
-            <div className="meta-value">
-              7,<em>000</em>
-            </div>
-          </div>
           <div>
             <div className="meta-label">Ships</div>
             <div className="meta-value">
