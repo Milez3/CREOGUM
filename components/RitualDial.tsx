@@ -7,13 +7,13 @@ export default function RitualDial({ auto = true }: { auto?: boolean }) {
   const [active, setActive] = useState(0);
   useEffect(() => {
     if (!auto) return;
-    const id = setInterval(() => setActive((a) => (a + 1) % 3), 2200);
+    const id = setInterval(() => setActive((a) => (a + 1) % DOSES.length), 2200);
     return () => clearInterval(id);
   }, [auto]);
 
   const R = 210;
   const cx = 260, cy = 260;
-  const progressPct = (active + 1) / 3;
+  const progressPct = (active + 1) / DOSES.length;
   const circ = 2 * Math.PI * R;
 
   return (
@@ -38,11 +38,11 @@ export default function RitualDial({ auto = true }: { auto?: boolean }) {
               {Array.from({ length: 48 }).map((_, i) => {
                 const a = (i / 48) * Math.PI * 2;
                 const r1 = R - 4;
-                const r2 = R + (i % 4 === 0 ? 12 : 6);
+                const r2 = R + (i % 3 === 0 ? 12 : 6);
                 return (
                   <line
                     key={i}
-                    className={`dial-tick${i % 12 === 0 ? ' hi' : ''}`}
+                    className={`dial-tick${i % 16 === 0 ? ' hi' : ''}`}
                     x1={cx + Math.cos(a) * r1}
                     y1={cy + Math.sin(a) * r1}
                     x2={cx + Math.cos(a) * r2}
