@@ -26,8 +26,8 @@ export default function RitualDial({ auto = true }: { auto?: boolean }) {
             <em>Three moments.</em>
           </h2>
           <div className="kicker">
-            A rhythm, not a regimen. Built for everyday consistency — not
-            &ldquo;workout days&rdquo; only.
+            Morning, midday, evening — your day already has these anchors. We
+            just gave each one a dose.
           </div>
         </div>
 

@@ -84,8 +84,7 @@ export default function Hero() {
           <div className="orbit">
             <div className="gum-piece p1">175</div>
             <div className="gum-piece p2">MG</div>
-            <div className="gum-piece p3">CRE</div>
-            <div className="gum-piece p4">GUM</div>
+            <div className="gum-piece p3">×3</div>
           </div>
           <Pouch />
         </div>

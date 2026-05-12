@@ -2,6 +2,7 @@ import Nav from '@/components/Nav';
 import Hero from '@/components/Hero';
 import DietaryBanner from '@/components/DietaryBanner';
 import Ticker from '@/components/Ticker';
+import ProductFacts from '@/components/ProductFacts';
 import RitualDial from '@/components/RitualDial';
 import Reserve from '@/components/Reserve';
 import Footer from '@/components/Footer';
@@ -16,6 +17,7 @@ export default function HomePage() {
       <Hero />
       <DietaryBanner />
       <Ticker />
+      <ProductFacts />
       <RitualDial />
       <Reserve />
       <Footer />
