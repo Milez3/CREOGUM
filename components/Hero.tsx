@@ -4,83 +4,87 @@ import { useEffect, useRef } from 'react';
 import Pouch from './Pouch';
 
 export default function Hero() {
-  const orb1 = useRef<HTMLDivElement>(null);
-  const orb2 = useRef<HTMLDivElement>(null);
+  const orbRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    const onS = () => {
-      const y = window.scrollY;
-      if (orb1.current) orb1.current.style.transform = `translateY(${y * 0.15}px)`;
-      if (orb2.current) orb2.current.style.transform = `translateY(${y * -0.1}px)`;
+    const onScroll = () => {
+      if (orbRef.current) {
+        orbRef.current.style.transform = `translateY(${window.scrollY * 0.12}px)`;
+      }
     };
-    window.addEventListener('scroll', onS, { passive: true });
-    return () => window.removeEventListener('scroll', onS);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
   return (
     <section className="hero" id="top">
       <div
         className="orb"
-        ref={orb1}
+        ref={orbRef}
         style={{
-          top: '-15vw',
-          right: '-20vw',
-          width: '70vw',
-          height: '70vw',
-          background:
-            'radial-gradient(circle, rgba(192,221,151,.4) 0%, rgba(192,221,151,0) 60%)',
-        }}
-      />
-      <div
-        className="orb"
-        ref={orb2}
-        style={{
-          bottom: '-25vw',
-          left: '-18vw',
-          width: '50vw',
-          height: '50vw',
-          background:
-            'radial-gradient(circle, rgba(59,107,16,.28) 0%, rgba(59,107,16,0) 65%)',
-          animationDelay: '2s',
+          top: '-10vw', right: '-18vw',
+          width: '55vw', height: '55vw',
+          background: 'radial-gradient(circle, rgba(59,107,16,.35) 0%, rgba(59,107,16,0) 65%)',
         }}
       />
       <div
         className="orb"
         style={{
-          top: '35%',
-          right: '18%',
-          width: '22vw',
-          height: '22vw',
-          background:
-            'radial-gradient(circle, rgba(234,243,222,.6) 0%, rgba(234,243,222,0) 65%)',
-          animationDelay: '4s',
+          bottom: '-18vw', left: '-12vw',
+          width: '45vw', height: '45vw',
+          background: 'radial-gradient(circle, rgba(192,221,151,.18) 0%, rgba(192,221,151,0) 65%)',
+          animationDelay: '3s',
         }}
       />
 
       <div className="hero-inner">
-        <div className="hero-eyebrow fu fu-1">
-          <span className="live-dot" />
-          <span>Batch 001 · Pre-Sale Live</span>
-          <span className="live-dot" />
-        </div>
+        {/* Left: text content */}
+        <div className="hero-text">
+          <div className="hero-eyebrow fu fu-1">
+            <span className="live-dot" />
+            <span>Batch 001 · Pre-Sale Live</span>
+          </div>
 
-        <h1 className="hero-h1">
-          <span className="w fu fu-2">The&nbsp;</span>
-          <span className="w fu fu-3">habit</span>
-          <br />
-          <span className="w fu fu-4">that&nbsp;</span>
-          <em className="fu fu-4">actually</em>
-          <span className="w fu fu-5">&nbsp;sticks.</span>
-        </h1>
+          <h1 className="hero-h1 fu fu-2">
+            The habit<br />
+            that <em>actually</em><br />
+            sticks.
+          </h1>
 
-        <div className="hero-left fu fu-5">
-          <div>
-            <div className="meta-label">Per Piece</div>
-            <div className="meta-value">
-              175<em>mg</em>
+          <p className="hero-sub fu fu-3">
+            175mg creatine per piece. Three pieces daily.
+            No mixing. No measuring. Just chew it.
+          </p>
+
+          <div className="hero-ctas fu fu-4">
+            <a href="#reserve" className="btn-big">
+              Reserve — $16.99 <span className="arrow">→</span>
+            </a>
+            <a href="#science" className="btn-ghost">
+              See the science
+            </a>
+          </div>
+
+          <div className="hero-stats fu fu-5">
+            <div className="stat-item">
+              <span className="stat-n">175<sup>mg</sup></span>
+              <span className="stat-l">Per piece</span>
+            </div>
+            <div className="stat-sep" />
+            <div className="stat-item">
+              <span className="stat-n">525<sup>mg</sup></span>
+              <span className="stat-l">Daily dose</span>
+            </div>
+            <div className="stat-sep" />
+            <div className="stat-item">
+              <span className="stat-n">Jul</span>
+              <span className="stat-l">Ships 2026</span>
             </div>
           </div>
         </div>
 
-        <div className="hero-pouch fu fu-4">
+        {/* Right: product visual */}
+        <div className="hero-visual fu fu-3">
           <div className="orbit">
             <div className="gum-piece p1">175</div>
             <div className="gum-piece p2">MG</div>
@@ -88,24 +92,6 @@ export default function Hero() {
             <div className="gum-piece p4">GUM</div>
           </div>
           <Pouch />
-        </div>
-
-        <div className="hero-right fu fu-5">
-          <div>
-            <div className="meta-label">Ships</div>
-            <div className="meta-value">
-              Jul <em>&apos;26</em>
-            </div>
-          </div>
-        </div>
-
-        <div className="hero-cta fu fu-6">
-          <a href="#reserve" className="btn-big">
-            Reserve — $16.99 <span className="arrow">→</span>
-          </a>
-          <div className="btn-note">
-            Founding price · <b>Locked forever</b>
-          </div>
         </div>
       </div>
     </section>
